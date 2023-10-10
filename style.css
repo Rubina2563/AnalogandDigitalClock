@@ -1,0 +1,186 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@500;700&family=Libre+Franklin:ital,wght@1,200&family=Poppins:ital,wght@0,300;0,400;1,300&display=swap');
+;
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: black;
+}
+
+.container{
+    position: relative;
+    border: 5px brown solid;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background:white ;
+   border-radius: 20px;
+   /*border-top-left-radius: 235px;
+   border-top-right-radius: 235px;*/
+   box-shadow: 10px 50px 90px rgb(93, 109, 126),
+   inset 5px 10px 40px rgb(220, 118, 51 ),
+   inset 5px 10px 4px rgb(220, 118, 51),
+   inset -5px -5px 20px rgb(205, 97, 85);
+   flex-direction: column;
+}
+
+.clock{
+    border: 2px brown solid;
+    position: relative;
+    width: 450px;
+    height: 450px;
+    background: rgb(249, 233, 168 );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 10px 50px 90px rgb(93, 109, 126),
+    inset 5px 10px 40px rgb(220, 118, 51 ),
+    inset 5px 10px 4px rgb(220, 118, 51),
+    inset -5px -5px 20px rgb(205, 97, 85);
+    margin-bottom: 10px;
+    
+}
+
+.clock::before{
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border:3px brown solid;
+    background: white;
+    border-radius: 50%;
+    z-index: 100;
+}
+
+.clock span{
+    position: absolute;
+    inset: 20px;
+    text-align: center;
+    color: white;
+    transform:rotate(calc(30deg*var(--i)));
+}
+
+.clock b{
+font-size: 2em;
+color: brown;
+display: inline-block;
+transform:rotate(calc(-30deg*var(--i)));
+}
+
+.circle{
+    position: absolute;
+    width: 300px;
+    height:300px;
+border: 0.3em peru solid ;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+z-index: 10;}
+
+.circle1{
+    width: 250px;
+    height: 250px;
+    z-index: 9;
+}
+
+
+.circle2{
+    width: 150px;
+    height: 150px;
+    z-index: 8;
+}
+
+.circle i{
+    position: absolute;
+    width:6px;
+height: 50%;
+background:var(--clr);
+transform-origin: bottom;
+border:2px peru solid;
+transform: scaleY(0.5);
+}
+
+.circle:nth-child(1) i{
+    width: 2px;
+}
+
+.circle:nth-child(2) i{
+    width: 6px;
+}
+
+.circle::before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border:2px peru solid;
+    box-shadow: 0 0 20px var(--clr),
+    
+    inset 0.5px 0.5px 5px white;
+    border-radius: 50%;
+    background: var(--clr);
+}
+
+#time{
+    display: flex;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    width: 200px;
+    height:50px;
+    border: 2px brown solid;
+    justify-content: center;
+    align-items: center;
+    background:rgb(249, 233, 168 );
+    border-radius: 40px;
+    font-size: 2em;
+    color: maroon;
+    box-shadow: 10px 50px 90px rgb(93, 109, 126),
+    inset 5px 10px 40px rgb(220, 118, 51 ),
+    inset 5px 10px 4px rgb(220, 118, 51),
+    inset -5px -5px 20px rgb(205, 97, 85);
+}
+
+#time div{
+    position: relative;
+    width:45px;
+  
+    font-weight: 600;
+    color: var(--clr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#time div:nth-child(1)::after, #time div:nth-child(2)::after{
+content: ':';
+position: absolute;
+right: -5px;
+bottom:4px;
+
+}
+
+
+#time div:nth-child(2)::after{
+    animation: animate 1s steps(1) infinite;
+}
+
+@keyframes animate{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+}
